@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+## Hướng dẫn sử dụng Adflex Publisher
+### Lấy đường dẫn API 
+Trước tiên bạn cần có một tài khoản trên [https://pub.adflex.vn/](https://pub.adflex.vn/), sau khi đăng nhập, di chuyển đến menu API để lấy đường dẫn API của bạn.
+## Sử dụng API
+Bạn có thể dùng bất kỳ ngôn ngữ lập trình nào để gọi đến đường dẫn API này, hệ thống sẽ trả về một danh sách các Offer. Bạn có thể đưa thêm một số tham số để lọc lấy các Offer theo ý muốn
 
-You can use the [editor on GitHub](https://github.com/hungkyo/adflex-publisher-api-docs/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hungkyo/adflex-publisher-api-docs/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Các tham số lọc:
+1. type: Lọc theo loại Offer
+2. geo: Lọc theo Geo của Offer 
+3. platform: Lọc theo Platform của Offer
+### Lọc theo Type
+Giá trị có thể truyền lên:
+1. cpi: Dùng để lấy ra các Offer loại CPI 
+2. cpa: Dùng để lấy ra các Offer loại CPA 
+3. all: Không phân biệt loại Offer
+Nếu bạn không truyền tham số **type**,hệ thống mặc định trả về tất cả các loại Offer
+Đường dẫn ví dụ:
+`https://api.adflex.link/v1/ywKwMrw_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa`
+### Lọc theo Geo
+Giá trị có thể truyền lên:
+1. **auto**: Tự động detect vị trí của người dùng và trả về các Offer tương ứng
+2. **vn**: Việt Nam
+3. **id**: Indonesia
+4. **th**: Thái Lan 
+5. **my**: Myanmar 
+6. **br**: Brazil 
+7. **in**: Ấn Độ 
+8. **other**: Ngoại trừ các nước trên 
+9. **all**: Không phân biệt GEO của các Offer 
+**Chú ý:** Hệ thống nhận biết vị trí của người dùng thông qua IP, giá trị **auto** chỉ có giá trị nếu bạn dùng Javascript hoặc jQuery để gọi lên API. Nếu bạn dùng PHP hay JAVA thì vị trí hệ thống nhận được sẽ là vị trí server web của bạn
+Nếu bạn không truyền lên tham số **geo**, hệ thống mặc định nhận **geo=auto**
+Đường dẫn ví dụ:
+`https://api.adflex.link/v1/ywKwMrw_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa&**geo=vn**`
