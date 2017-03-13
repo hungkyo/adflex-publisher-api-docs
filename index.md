@@ -5,6 +5,7 @@ Trước tiên bạn cần có một tài khoản trên [https://pub.adflex.vn/]
 Bạn có thể dùng bất kỳ ngôn ngữ lập trình nào để gọi đến đường dẫn API này, hệ thống sẽ trả về một danh sách các Offer. Bạn có thể đưa thêm một số tham số để lọc lấy các Offer theo ý muốn.
 
 Phương thức request hệ thống nhận: **GET**
+
 Các tham số lọc:
 1. type: Lọc theo loại Offer
 2. geo: Lọc theo Geo của Offer 
@@ -55,11 +56,12 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
 ## Ví dụ đường dẫn API
 - Lấy ra các Offer **loại CPA cho khu vực Thái Lan**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa&geo=th`
-- Lấy ra các Offer **loại CPI cho khu vực Việt Nam và hệ điều hàng Android**
+- Lấy ra các Offer **loại CPI cho khu vực Việt Nam và hệ điều hành Android**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpi&geo=th&platform=android`
 ## Ví dụ sử dụng API 
 Ví dụ sử dụng jQuery AJAX để gọi API lấy ra các Offer **loại CPA, khu vực tự động**
-`
+
+```
 jQuery.ajax({
   url: "https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json"
   method: "GET",
@@ -72,10 +74,10 @@ jQuery.ajax({
     console.log(offerData);
   }
 });
-`
+```
 
 Ví dụ sử dụng PHP để gọi API lấy ra các Offer **loại CPI, khu vực Việt Nam, hệ điều hành iOS**
-`
+```
 $APIURL = "https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json";
 $filters = array(
   "type" => "cpi",
@@ -93,4 +95,4 @@ $responseData = curl_exec($ch);
 curl_close($ch);
 $responseData = json_decode($responseData);
 var_dump($responseData);
-`
+```
