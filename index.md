@@ -60,12 +60,64 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
 - Lấy ra các Offer **loại CPI cho khu vực Việt Nam và hệ điều hành Android**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpi&geo=th&platform=android`
 
+## Ví dụ data trả về khi gọi đến API
+```
+{
+  "status_code": 200,
+  "meta": {
+    "total": 2
+  },
+  "data": [
+    {
+      "id": "upsizevn",
+      "name": "UpSize Vietnam",
+      "type": "cpa",
+      "traffic_type": "both",
+      "categories": null,
+      "tracking_link": "http://aff.mclick.mobi/upsizevn/hungnd4",
+      "tracking_link_facebook": "http://hungnd4.etracking.link/upsizevn/hungnd4",
+      "tracking_link_encrypted": "http://aff.mclick.mobi/v2/SHFzMAp3f3GyoLH0YJp0G7dYXBQIg_JugE_Ou0Thalg",
+      "title": "UpSize VN",
+      "description": "Ngày nay, rất nhiều chị em phụ nữ ao ước có được vòng một căng tròn, hoàn hảo. Đây là điều không lạ, khi đây chính là bộ phận thu hút ánh nhìn của cánh đàn ông. Và tôi đã đưa ra cho họ lời khuyên về sản phẩm Upsize\r\n\r\nNếu bạn dùng kem hàng ngày, kích cỡ vòng một sẽ nở nang hơn trong vòng 3-4 tuần, khuôn vòng một trở lên căng và chắc, làn da đàn hồi và mềm mịn hơn.\r\n\r\nSản phẩm trải qua những thử nghiệm lâm sàng được tiến hành bởi các chuyên gia của Tổ chức Y tế Thế giới tại 14 quốc gia trên toàn thế giới. Hàng nghìn phụ nữ đã thừa nhận tính hiệu quả của kem nâng vòng một này.",
+      "images": {
+        "750x1334": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/750x1334.jpg",
+        "640x360": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/banner_upsizevn_640x360.jpg",
+        "600x600": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/600x600.jpg",
+        "600x480": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/600x480.jpg",
+        "1200x628": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/1200x628.jpg",
+        "480x250": "http://img.adsoca.com/public/share/adflex/offers/banners/upsizevn/480x250.jpg"
+      },
+      "icon": "http://cloudfront.adflex.vn/offers/icons/2017/01/1483601776_5182.png"
+    },
+    {
+      "id": "greencoffevn",
+      "name": "Green Coffee 3 (Vietnam)",
+      "type": "cpa",
+      "traffic_type": "both",
+      "categories": null,
+      "tracking_link": "http://aff.mclick.mobi/greencoffevn/hungnd4",
+      "tracking_link_facebook": "http://hungnd4.etracking.link/greencoffevn/hungnd4",
+      "tracking_link_encrypted": "http://aff.mclick.mobi/v2/eNRiULkSbzkdD5wVgNHbu925tYkXuq7jWlgKDfD_oJU",
+      "title": "Green Coffee 3 VN",
+      "description": "Green Coffee 3 VN",
+      "images": {
+        "1200x628": "http://img.adsoca.com/public/share/adflex/offers/banners/greencoffevn/1200x628.jpg",
+        "750x1334": "http://img.adsoca.com/public/share/adflex/offers/banners/greencoffevn/750x1334.jpg",
+        "640x360": "http://img.adsoca.com/public/share/adflex/offers/banners/greencoffevn/640x360.jpg",
+        "600x600": "http://img.adsoca.com/public/share/adflex/offers/banners/greencoffevn/600x600.jpg",
+        "600x480": "http://img.adsoca.com/public/share/adflex/offers/banners/greencoffevn/600x480.jpg"
+      },
+      "icon": "http://cloudfront.adflex.vn/offers/icons/2017/01/1484210566_4208.png"
+    }
+  ]
+}
+```
 ## Ví dụ sử dụng API 
 Ví dụ sử dụng jQuery AJAX để gọi API lấy ra các Offer **loại CPA, khu vực tự động**
 
 ```
 jQuery.ajax({
-  url: "https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json"
+  url: "https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json",
   method: "GET",
   dataType: "JSON",
   data: {
@@ -82,19 +134,20 @@ Ví dụ sử dụng PHP để gọi API lấy ra các Offer **loại CPI, khu v
 ```
 $APIURL = "https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json";
 $filters = array(
-  "type" => "cpi",
-  "geo" => "vn",
-  "platform" => "ios",
+        "type" => "cpi",
+        "geo" => "vn",
+        "platform" => "ios",
 );
 $query_params = http_build_query($filters);
 $ch = curl_init($APIURL . "?" . $query_params);
 curl_setopt_array($ch, array(
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_SSL_VERIFYPEER => false,
-  CURLOPT_HEADER => false,
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_HEADER => false,
 ));
 $responseData = curl_exec($ch);
 curl_close($ch);
 $responseData = json_decode($responseData);
 var_dump($responseData);
 ```
+
