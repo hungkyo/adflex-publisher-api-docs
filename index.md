@@ -53,11 +53,13 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
 
 Đường dẫn ví dụ:
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?platform=ios`
+
 ## Ví dụ đường dẫn API
 - Lấy ra các Offer **loại CPA cho khu vực Thái Lan**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa&geo=th`
 - Lấy ra các Offer **loại CPI cho khu vực Việt Nam và hệ điều hành Android**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpi&geo=th&platform=android`
+
 ## Ví dụ sử dụng API 
 Ví dụ sử dụng jQuery AJAX để gọi API lấy ra các Offer **loại CPA, khu vực tự động**
 
