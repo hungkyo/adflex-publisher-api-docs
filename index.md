@@ -14,13 +14,13 @@ Các tham số lọc:
 ### Lọc theo Type
 Giá trị có thể truyền lên:
 1. cpi: Dùng để lấy ra các Offer loại CPI 
-2. cpa: Dùng để lấy ra các Offer loại CPA 
+2. cpo: Dùng để lấy ra các Offer loại CPO 
 3. all: Không phân biệt loại Offer
 
 Nếu bạn không truyền tham số **type**,hệ thống mặc định trả về tất cả các loại Offer
 
 Đường dẫn ví dụ:
-`https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa`
+`https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpo`
 
 ### Lọc theo Geo
 Giá trị có thể truyền lên:
