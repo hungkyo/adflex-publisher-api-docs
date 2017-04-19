@@ -55,8 +55,8 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?platform=ios`
 
 ## Ví dụ đường dẫn API
-- Lấy ra các Offer **loại CPA cho khu vực Thái Lan**
-`https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpa&geo=th`
+- Lấy ra các Offer **loại CPO cho khu vực Thái Lan**
+`https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpo&geo=th`
 - Lấy ra các Offer **loại CPI cho khu vực Việt Nam và hệ điều hành Android**
 `https://api.adflex.link/v1/aWoIOz_WM1riG7ix2qrDNfb3rYL1B9xHyVKZ-o3Scc/offers.json?type=cpi&geo=th&platform=android`
 
@@ -71,7 +71,7 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
     {
       "id": "upsizevn",
       "name": "UpSize Vietnam",
-      "type": "cpa",
+      "type": "cpo,
       "traffic_type": "both",
       "categories": null,
       "tracking_link": "http://aff.mclick.mobi/upsizevn/hungnd4",
@@ -92,7 +92,7 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
     {
       "id": "greencoffevn",
       "name": "Green Coffee 3 (Vietnam)",
-      "type": "cpa",
+      "type": "cpo,
       "traffic_type": "both",
       "categories": null,
       "tracking_link": "http://aff.mclick.mobi/greencoffevn/hungnd4",
@@ -113,7 +113,7 @@ Nếu bạn không truyền lên tham số **platform**, hệ thống mặc đ�
 }
 ```
 ## Ví dụ sử dụng API 
-Ví dụ sử dụng jQuery AJAX để gọi API lấy ra các Offer **loại CPA, khu vực tự động**
+Ví dụ sử dụng jQuery AJAX để gọi API lấy ra các Offer **loại CPO, khu vực tự động**
 
 ```
 jQuery.ajax({
@@ -121,7 +121,7 @@ jQuery.ajax({
   method: "GET",
   dataType: "JSON",
   data: {
-    type: "cpa"
+    type: "cpo"
   },
   success: function (responseData) {
     var offerData = responseData.data;
